@@ -25,11 +25,13 @@ public class Game implements Serializable {
 	private Long id;
 	private String title;
 	private Platform platform;
-	
+
+	//@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "genre_id")
 	private Genre genre;
 	
+	//@JsonIgnore
 	@OneToMany(mappedBy = "game")
 	private List<Record> records = new ArrayList<>();
 	
